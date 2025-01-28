@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.N.O.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            color: #9a23d1;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .terminal {
+            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 0px 15px #9a23d1;
+        }
+
+        .terminal::before {
+            content: ">>> Portal de Seleção - J.A.N.O";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #050505;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #9a23d1;
+        }
+
+        .challenge {
+            background-color: rgba(154, 35, 209, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px dashed #f7e4ff;
+            border-radius: 5px;
+            text-shadow: 0px 0px 5px #9a23d1;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        input {
+            background: #0a0a0a;
+            border: 1px solid #d8d8d8;
+            color: #9a23d1;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #9a23d1;
+        }
+
+        button {
+            background: linear-gradient(145deg, #9a23d1, #4b036d);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            box-shadow: 0px 0px 10px #9a23d1;
+        }
+
+        button:hover {
+            background: #000;
+            color: #9a23d1;
+            border: 1px solid #9a23d1;
+            transform: scale(1.1);
+        }
+
+        #message {
+            color: #f00;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .success {
+            color: #00eb37 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FASE 1: INICIANDO O DESAFIO<span class="blink">_</span></h1>
+        
+        <div class="terminal">
+            <p>Desde os primórdios da civilização, existem grupos que operam nas sombras. São sociedades compostas por mentes brilhantes, estrategistas e visionários que moldam o curso da história sem que ninguém saiba. Entre essas organizações lendárias, uma das mais enigmáticas é a Fraternidade de Ébano. <p>
+
+                <p>A Fraternidade de Ébano surgiu na Renascença, formada por matemáticos, alquimistas e estrategistas militares que buscavam conhecimento absoluto. Dizem que seus membros compartilhavam segredos sobre criptografia, segurança e sistemas de comunicação avançados, muito além de seu tempo. Eles eram conhecidos por se infiltrar em organizações e proteger informações críticas, garantindo que os segredos mais valiosos jamais caíssem nas mãos erradas.</p>
+                
+            <p>Mas o mais curioso sobre a Fraternidade é que sua verdadeira missão nunca foi apenas proteger segredos, mas também recrutar os poucos capazes de decifrá-los. Para isso, criaram desafios e enigmas, espalhados discretamente pelo mundo, para identificar aqueles com inteligência, habilidade e determinação para se juntar a eles.</p>
+                
+                Agora, você está aqui. Você foi escolhido.</p>
+            <p>Bem-vindo aos Filhos de J.A.N.O Apenas os dignos avançam.</p>
+        </div>
+
+        <div class="challenge">
+            <h3>Primeira Mensagem:</h3>
+            <p>QSByYXphbyB2b3MgZSBkYWRhIHBhcmEgZGlzY2VybmlyIG8gYmVtIGRvIG1hbC4=</p>
+            <p>Você pode decifrar isso caro jogador? </p>
+        </div>
+
+        <div>
+            <input type="text" id="answer" placeholder="Digite sua resposta...">
+            <button onclick="checkAnswer()">Validar</button>
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const correctAnswer = "a razao vos e dada para discernir o bem do mal."; 
+            const messageElement = document.getElementById('message');
+            
+            if (answer === correctAnswer) {
+                messageElement.textContent = "Parabéns, aqui está seu próximo desafio:\n URL GIT PAGES";
+                messageElement.className = "success";
+            } else {
+                messageElement.textContent = "Incorreto. Acho que não está tentando o suficiente.";
+                messageElement.className = "";
+            }
+        }
+    </script>
+    <p>RWNze2FfdjNyZDRkZTFyNF8=</p>
+</body>
+</html>
